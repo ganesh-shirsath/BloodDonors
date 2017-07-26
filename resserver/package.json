@@ -1,0 +1,24 @@
+{
+  "name": "blooddonors",
+  "version": "1.0.0",
+  "description": "Blood donors application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "cors": "*",
+    "express": "*",
+    "jsonwebtoken": "*",
+    "jwt-simple": "^0.5.1",
+    "mongoose": "^4.10.8",
+    "morgan": "^1.8.2",
+    "passport": "^0.3.2",
+    "passport-jwt": "^2.2.1"
+  },
+  "author": "Ganesh",
+  "license": "ISC"
+}
