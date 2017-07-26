@@ -5,6 +5,21 @@ const Donor = require('../model/donor');
 const ContactModel = require('../model/contact');
 
 
+//Search Donors
+router.get('/search',(req, res, next)=>{
+    console.log("Req params", req.query);
+    Donor.searchDonors(req.query,(err, donors) =>{
+        if(err) {
+            console.log("Error.......Search",err)
+            res.json({success:false, msg:"Failed to retrive donors."});
+        }
+        else {
+            console.log("Search result...",donors)
+            res.json({success:true, donors:donors,msg:"Donors successfully found."});
+        }
+    })
+});
+
 //Register Donor
 router.post('/register', (req, res, next)=>{
     console.log("req.body.username",req.body)

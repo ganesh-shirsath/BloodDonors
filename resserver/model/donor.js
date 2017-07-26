@@ -50,5 +50,16 @@ module.exports.addDonor = function(newDonor, callback) {
     newDonor.save(callback);
 }
 
+module.exports.searchDonors = function(queryParams, callback) {
+    var populate = [{path: 'Contact' }];
+    var query = {};
+    if(queryParams && queryParams.bloodGroup) {
+        query['blood_group'] = queryParams.bloodGroup.trim();
+    }
+    var donorsResult = Donor.find(query).populate(populate);
+    donorsResult.skip(Number(queryParams.donorSkip)).limit(Number(queryParams.donorLimit));
+    donorsResult.exec(callback);
+}
+
 
 

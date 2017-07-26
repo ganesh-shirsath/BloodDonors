@@ -14,6 +14,7 @@ import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DonorRegisterComponent } from './components/donor-register/donor-register.component';
 import { BloodRequestComponent } from './components/blood-request/blood-request.component';
+import { DonorSearchComponent } from './components/donor-search/donor-search.component';
 
 //import { DataFilterPipe } from './filters/data-filter.pipe';
 
@@ -24,6 +25,8 @@ import { BloodRequestService } from './services/blood-request.service';
 import { AuthGuard } from './guards/auth.guard';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { DropdownModule } from "ng2-dropdown";
+
+
 
 
 const appRoutes: Routes  = [
@@ -45,7 +48,8 @@ const appRoutes: Routes  = [
     HomeComponent,
     DashboardComponent,
     DonorRegisterComponent,
-    BloodRequestComponent
+    BloodRequestComponent,
+    DonorSearchComponent
   ],
   imports: [
     BrowserModule,
