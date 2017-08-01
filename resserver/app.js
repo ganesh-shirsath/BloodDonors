@@ -25,10 +25,10 @@ mongoose.connection.on('error',function(err) {
 const app = express();
 
 // User routes
-const users = require('./routes/users')
+const users = require('./routes/users');
 
 //Donor routes
-const donors = require('./routes/donors')
+const donors = require('./routes/donors');
 
 //Blood request routes
 const bloodRequest = require('./routes/blood-requests');

@@ -1,0 +1,9 @@
+/*div.display-modal {
+  opacity: 1!important;
+  margin-top: 55% !important;
+}*/
+
+.table-row td:hover {
+  pointer-events: auto;
+  cursor: pointer;
+}

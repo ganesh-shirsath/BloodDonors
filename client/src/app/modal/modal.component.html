@@ -1,0 +1,35 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{title}}</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>City</label>
+        <div class="form-control">{{data.city}}</div>
+      </div>
+      <div class="form-group">
+        <label>State</label>
+        <div class="form-control">{{data.state}}</div>
+                        </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>Email</label>
+        <div class="form-control">{{data.email}}</div>
+      </div>
+      <div class="form-group">
+        <label>Mobile</label>
+        <div class="form-control">{{data.mobile}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <!--<button type="button" class="btn btn-success" (click)="okBtn([ok])">{{ok}}</button>-->
+  <button type="button" class="btn btn-danger" (click)="cancelBtn([cancel])">{{cancel}}</button>
+</div>
+

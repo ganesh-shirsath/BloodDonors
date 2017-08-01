@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+/*.fade {
+  opacity: 1!important;
+}*/
+
+body > ngb-modal-window.fade {
+  opacity: 1!important;
+  margin-top: 1% !important;
+}
+div.modal-content {
+  margin-top: 45% !important;
+}

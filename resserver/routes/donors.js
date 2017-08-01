@@ -5,9 +5,26 @@ const Donor = require('../model/donor');
 const ContactModel = require('../model/contact');
 
 
+//Get donor by id
+router.get('/donor',(req, res, next)=>{
+    console.log("Req params", req.query)
+    Donor.getDonorById(req.query.id, (err, donor) =>{
+        if(err) {
+            console.log("Error........Get Donor",err);
+            res.json({success:false, msg:"Faild to retrive donor."})
+        }
+        else {
+            console.log("Donor found-->",donor);
+            res.json({success:true, donor:donor,msg:"Donor successfully found."});
+        }
+    })
+})
+
 //Search Donors
 router.get('/search',(req, res, next)=>{
-    console.log("Req params", req.query);
+    console.log("Req params............................");
+    console.log(req.query);
+    console.log("Req params.................................");
     Donor.searchDonors(req.query,(err, donors) =>{
         if(err) {
             console.log("Error.......Search",err)
@@ -15,6 +32,11 @@ router.get('/search',(req, res, next)=>{
         }
         else {
             console.log("Search result...",donors)
+            if(donors.length > 0 && req.query.city !== 'undefined') {
+                donors = donors.filter(function(doc){
+                    return doc.contact.city === req.query.city.trim();
+                })
+            }
             res.json({success:true, donors:donors,msg:"Donors successfully found."});
         }
     })
