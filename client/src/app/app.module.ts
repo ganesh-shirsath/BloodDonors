@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { DataTableModule } from "angular2-datatable";
+import { DatePickerModule } from "ng2-datepicker";
 
 
 import { AppComponent } from './app.component';
@@ -32,6 +33,7 @@ import { ModalService} from './modal/modal.service';
 import { NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent} from './modal/modal.component';
+import { CommentModalComponent } from './modal/comment-modal.component';
 
 
 
@@ -60,7 +62,8 @@ const appRoutes: Routes  = [
     FooterComponent,
     SearchDonorComponent,
     DonorContactModalComponent,
-    ModalComponent
+    ModalComponent,
+    CommentModalComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +74,8 @@ const appRoutes: Routes  = [
     FlashMessagesModule,
     DropdownModule,
     DataTableModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    DatePickerModule
   ],
   providers: [
     ValidateService,
@@ -82,7 +86,7 @@ const appRoutes: Routes  = [
     ModalService,
     NgbModal
   ],
-  entryComponents: [ModalComponent],
+  entryComponents: [ModalComponent,CommentModalComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

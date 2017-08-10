@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
   email: string;
   username: string;
   password: string;
-  role: boolean;
+  role: any;
 
   constructor(
     private validateService: ValidateService,
@@ -25,7 +25,13 @@ export class RegisterComponent implements OnInit {
     private router: Router
   ) { }
 
+  public roles = [
+    {value:true,name:"Admin"},
+    {value:false,name:"User"}
+  ]
+
   ngOnInit() {
+    this.role = this.roles[1].value
   }
 
   onRegisterSubmit(){
@@ -38,6 +44,8 @@ export class RegisterComponent implements OnInit {
       password: this.password,
       role: this.role
     }
+
+    console.log("User---------------",user)
 
     if(!this.validateService.validateRegister(user)) {
       this.flashMessagesService.show("Please fill in all fields.",{cssClass:'alert-danger',timeout:3000});

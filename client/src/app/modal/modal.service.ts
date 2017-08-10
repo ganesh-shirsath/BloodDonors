@@ -1,10 +1,12 @@
 
 import { Injectable } from '@angular/core';
-import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
-import {Component, Input} from '@angular/core';
-import {NgModule} from '@angular/core';
-import {ModalComponent} from './modal.component';
-import {ConfirmModel} from  './ConfirmModel';
+import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { Component, Input } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { ModalComponent } from './modal.component';
+import { ConfirmModel } from  './ConfirmModel';
+import { CommentModalComponent } from './comment-modal.component';
+import { CommentModel } from  './CommentModel';
 
 @Injectable()
 export class ModalService {
@@ -19,9 +21,6 @@ export class ModalService {
     modalRef.componentInstance.message = confirmModel.message;
     modalRef.componentInstance.data = confirmModel.data;
 
-    console.log("confirmModel.data.................")
-    console.log(confirmModel.data)
-    console.log("confirmModel.data.................")
 
     /*On  closing a modal */
     modalRef.result
@@ -32,6 +31,26 @@ export class ModalService {
         (reason) => {
           console.log("reason.................",reason)
           confirmation(reason)
+        });
+  }
+
+  addCommentModal(commentModel:CommentModel,comment) {
+    const modalRef = this.modalService.open(CommentModalComponent);
+    modalRef.componentInstance.add = commentModel.add;
+    modalRef.componentInstance.cancel = commentModel.cancel;
+    modalRef.componentInstance.title = commentModel.title;
+    modalRef.componentInstance.data = commentModel.data;
+    modalRef.componentInstance.id = commentModel.id;
+
+    /*On  closing a modal */
+    modalRef.result
+      .then((result) => {
+          console.log("result.................",result)
+          comment(result)
+        },
+        (reason) => {
+          console.log("reason.................",reason)
+          comment(reason)
         });
   }
 

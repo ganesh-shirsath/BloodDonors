@@ -54,7 +54,7 @@ module.exports.searchDonors = function(queryParams, callback) {
     var populate = [{path: 'contact' }];
     var query = {};
     if(queryParams && queryParams.bloodGroup && queryParams.bloodGroup !== 'undefined') {
-        console.log("Blood group......:"+queryParams.bloodGroup)
+        console.log("Blood group......:"+ typeof queryParams.bloodGroup)
         query['blood_group'] = queryParams.bloodGroup.trim();
     }
 

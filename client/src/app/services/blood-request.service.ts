@@ -30,4 +30,15 @@ export class BloodRequestService {
     return this.http.get('api/blood/blood-requests', {headers: header})
       .map(res => res.json());
   }
+
+  addCommentToBloodRequest(commentObj) {
+    let header = new Headers();
+    this.authToken = localStorage.getItem('id_token');
+    header.append("Content-Type","application/json");
+    header.append("x-access-token",this.authToken);
+
+
+    return this.http.post('api/blood/comment/add',commentObj, {headers: header})
+      .map(res => res.json());
+  }
 }

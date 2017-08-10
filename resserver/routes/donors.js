@@ -66,9 +66,9 @@ router.post('/register', (req, res, next)=>{
                 last_name: req.body.lname,
                 occupation: req.body.occupation,
                 maratial_status: req.body.mstatus,
-                dob: new Date(req.body.dob),
+                dob: new Date(req.body.dob.formatted),
                 blood_group: req.body.bgroup,
-                donation_date: new Date(req.body.ddate),
+                donation_date: new Date(req.body.ddate.formatted),
                 isRecentDonor: req.body.isRecentDonor,
                 contact: contact._id
             });

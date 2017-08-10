@@ -46,5 +46,5 @@ module.exports.addComment = function(bloodReqId, commentId, callback) {
 }
 
 module.exports.getBloodRequests = function(callback) {
-    BloodRequest.find({},callback);
+    BloodRequest.find({},callback).populate('comments');
 }

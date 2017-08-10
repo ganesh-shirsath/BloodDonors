@@ -25,7 +25,7 @@
         <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/login']">Login</a></li>
 
         <li *ngIf="authService.loggedIn()" class="dropdown" dropdown [dropdownToggle]="true" (onOpen)="doSomeActionOnOpen()" (onClose)="doSomeActionOnClose()">
-          <a href="#" class="dropdown-toggle" dropdown-open>Register <span class="caret"></span></a>
+          <a class="dropdown-toggle" dropdown-open>Register <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/registerUser']">User</a></li>
             <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/registerDonor']">Donor</a></li>

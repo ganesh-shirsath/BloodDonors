@@ -18,6 +18,19 @@ export class BloodRequestComponent implements OnInit {
   requireBlood: string;
   comment: string;
 
+
+  public bloodGroups = [
+    {value:"O Positive", name:"O+" },
+    {value:"O Negative", name:"O-"},
+    {value:"A Positive", name:"A+"},
+    {value:"A Negative", name:"A-"},
+    {value:"B Positive", name:"B+"},
+    {value:"B Negative", name:"B-"},
+    {value:"AB Positive", name:"AB+"},
+    {value:"AB Negative", name:"AB-"}
+  ]
+
+
   constructor(
     private validateService: ValidateService,
     private bloodRequestService: BloodRequestService,

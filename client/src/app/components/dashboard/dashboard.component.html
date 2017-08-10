@@ -81,7 +81,9 @@
       <td>{{bloodReq.state | uppercase}}</td>
       <td>{{bloodReq.req_group | uppercase}}</td>
       <td>{{bloodReq.comments[0] }}</td>
-      <td>Add Comment</td>
+      <td>
+        <button class="btn btn-primary" type="button" (click)="viewComments(bloodReq)">Add Comment</button>
+      </td>
     </tr>
     </tbody>
     <tfoot>

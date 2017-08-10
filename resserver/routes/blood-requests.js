@@ -72,7 +72,8 @@ router.post('/blood-request',(req, res, next) =>{
 
 // Add Comment request
 router.post('/comment/add',(req, res, next) =>{
-    console.log("GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG")
+    console.log("GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",req.body.bloodReqId);
+    console.log("GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",req.body.comment);
     if(req.body.comment === undefined || req.body.comment ==='') {
         res.json({success:false, msg:"Could not svae the empty comment"})
     }

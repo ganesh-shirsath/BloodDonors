@@ -1,0 +1,28 @@
+
+<div class="modal-header">
+  <h4 class="modal-title">{{title}}</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="col-md-12" >
+      <div class="form-group" *ngFor="let comment of data">
+        <label>Created on- </label>{{comment.createdDate | date}}
+        <div class="">{{comment.text}}</div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="form-group">
+        <label>Add Comment</label>
+        <textarea type="text" class="form-control" rows="4"  [(ngModel)]="comment" name="comment" required></textarea>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-success" (click)="addCommentBtn([add],comment,id)">{{add}}</button>
+  <button type="button" class="btn btn-danger" (click)="cancelBtn([cancel])">{{cancel}}</button>
+</div>
+
